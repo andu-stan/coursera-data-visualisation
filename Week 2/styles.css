@@ -1,0 +1,23 @@
+body {
+    font: 10px Arial;
+}
+
+path {
+    stroke-width: 2;
+    fill: none;
+    shape-rendering: auto;
+}
+
+.axis path, .axis line {
+    fill: none;
+    stroke: grey;
+    stroke-width: 1;
+    shape-rendering: crispEdges;
+}
+
+.legendtitle {
+    font-size: 14px;
+    font-weight: bold;
+    text-anchor: left;
+    fill: grey;
+}
