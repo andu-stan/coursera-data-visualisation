@@ -7,9 +7,28 @@
 
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script>
+
 </head>
 
 <body>
-    <script src="temperaturechart.js"></script>
-    
+    <h1>Annual Mean Land-Ocean Temperature Evolution Chart</h1>
+    <div id="area1">
+        <script src="temperaturechart.js"></script>
+    </div>
+    <h2>Explanation</h2>
+    <p>The graph is based on the Zonal annual means GISTEMP data set (click <a target="_blank" href="https://data.giss.nasa.gov/gistemp/tabledata_v4/ZonAnn.Ts+dSST.txt">here</a> to download). </p>
+    <p>On the x-axis you can see the years, coresponding to the entire data set, and on the y-axis is the deviation from the 1951–1980 mean in degrees Celsius</p>
+    <p>The three lines describe the evolution of the annual mean land-ocean temperature index in 0.01 degrees Celsius for Global, Northern and Southern Hemisphere over the 1880 to 2020 period.</p>
+    <p>The chart shows the increase in mean temperature over the 1880 to 2020 period, peaking in the year 2019. Also, we can observer that in the 1900 to 1920 period, a shift occured between temperature in the northern and southern hemisphere; if before 1900 temperatures were higher in the shouthern hemisphere, starting with the early 1920s, the norhern hemisphere temperatures started to rise. In the years 2000s, the diference between the two started growing significantly.</p>
+    <br>
+    <h1>Annual Temperature Deviation Comparison per Year</h1>
+    <div id="area2">
+        <script src="tempevolpermonth.js"></script>
+    </div>
+    <h2>Explanation</h2>
+    <p>The graph is based on the Global-mean monthly GISTEMP data set (click <a target="_blank" href="https://data.giss.nasa.gov/gistemp/tabledata_v4/GLB.Ts+dSST.txt">here</a> to download). </p>
+    <p>On the x-axis you can see the months, and on the y-axis is the deviation of the global temperature from the 1951–1980 mean in degrees Celsius. The entired data set is used, form the year 1880 to 2020</p>
+    <p>Each line in the graph describes the change in temperature over one year. Using this graph we can see a comparison between years, at the month level. By using a luminance gradient for coloring the lines in the graph, we can more easily spot the evolution over years.</p>
+    <p>The chart shows that the temperature over the course of a year doesn't vary too much, but over the years an steady, gradual increase can be observed.</p>
 </body>

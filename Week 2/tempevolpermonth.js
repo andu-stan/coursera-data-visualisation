@@ -3,9 +3,6 @@ var margin = { top: 30, right: 20, bottom: 30, left: 50 },
     width = 1200 - margin.left - margin.right,
     height = 400 - margin.top - margin.bottom;
 
-// Parse the date / time
-var parseDate = d3.timeParse("%Y/%b/%d");
-
 // Set the ranges
 var x = d3.scaleLinear().range([0, width]);
 var y = d3.scaleLinear().range([height, 0]);
@@ -25,10 +22,12 @@ var line = d3.line()
 
 
 // Adds the svg canvas
-var svg = d3.select("body")
+var svg = d3.select("#area2")
     .append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
+    //.attr("width", width + margin.left + margin.right)
+    //.attr("height", height + margin.top + margin.bottom)
+    // the viewbox makes the charts responsive 
+    .attr("viewBox", '0 0 ' + (width + margin.left + margin.right) + ' ' + (height + margin.top + margin.bottom))
     .append("g")
     .attr("transform",
         "translate(" + margin.left + "," + margin.top + ")");
@@ -41,7 +40,6 @@ d3.text("data/GLB.Ts+dSST.csv").then(function (data) {
 
     // Remove extra columns
     const keep = ["Year", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-    //const keep = ["Year", "Jan"];
     data = data.map(row => [...keep].reduce((acc, v) => ({ ...acc, [v]: row[v] }), {}));
 
     var allGroup = [];
